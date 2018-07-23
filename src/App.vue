@@ -8,6 +8,7 @@
                 </video>
             </div>
         </div>
+        <hr>
         <div class="row">
             <div class="col-xs-6 col-sm-3 p-0 m-0 box1">
                 HOW IT WORKS
