@@ -1,31 +1,85 @@
 <template>
-    <div id="app" class="container-fluid">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 p-0 m-0">
-                <img src="./assets/logo.png" alt="">
-                <video id="videoPreview" autoplay muted loop>
-                    <source src="./assets/demo.mp4" type="video/mp4">
-                </video>
+    <div id="app">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 p-0 m-0">
+                    <video id="videoPreview" autoplay muted loop>
+                        <source src="./assets/preview.mp4" type="video/mp4">
+                    </video>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-xs-6 col-sm-3 p-0 m-0 box1">
-                HOW IT WORKS
-            </div>
-            <div class="col-xs-6 col-sm-3 p-0 box2">
-                FEATURES
-            </div>
-            <div class="col-xs-6 col-sm-3 p-0 box3">
-                GET CONNECTED
-            </div>
-            <div class="col-xs-6 col-sm-3 p-0 box4">
-                NEED MORE
+        <div class="container">
+            <h1>HOW IT WORKS</h1>
+            <div class="row">            
+                <div class="col-xs-6 col-sm-6 p-0 m-0">
+                    <div>
+                    Free Vehicle Tracking has been providing FREE vehicle tracking services worldwide for many years, and we are proud of our history in providing no-cost tracking services to those that need it. However, we feel that the time is right to expand our horizons, and we want to share this exciting news of the changes to come!
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 p-0 m-0">
+                    <img src="./assets/it_works.png" style="width:100%"/>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 p-0" align="ceter">PICK YOUR PRICE</div>
+        <div class="container">
+            <div  class='row'>
+                <div class="col-xs-6 col-sm-9 p-0 m-0">
+                    FEATURES
+                </div>
+                <div class="col-xs-6 col-sm-3 p-0 m-0">
+                    FEATURES
+                </div>
+            </div>
         </div>
-  </div>
+        <div class="container-fluid _get_connected">
+            <div class="container">
+                <h1>GET CONNECTED</h1>
+                <div  class='row'>
+                    <div class="col-xs-6 col-sm-6 p-0 m-0">
+                        <img src="./assets/need_more.png" style="width:100%"/>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 p-0 m-0">
+                        <div>
+                        Free Vehicle Tracking has been providing FREE vehicle tracking services worldwide for many years, and we are proud of our history in providing no-cost tracking services to those that need it. However, we feel that the time is right to expand our horizons, and we want to share this exciting news of the changes to come!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <h1>NEED MORE</h1>
+            <div  class='row'>
+                <div class="col-xs-6 col-sm-6 p-0 m-0">
+                    <div>
+                    Free Vehicle Tracking has been providing FREE vehicle tracking services worldwide for many years, and we are proud of our history in providing no-cost tracking services to those that need it. However, we feel that the time is right to expand our horizons, and we want to share this exciting news of the changes to come!
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 p-0 m-0">
+                    <img src="./assets/need_more.png" style="width:100%"/>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid pcick_your_price">
+            <div class="container">
+                <h1>PICK YOUR PRICE</h1>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-3">
+                        <div class="_box">ssss</div>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <div class="_box">ssss</div>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <div class="_box">ssss</div>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <div class="_box">ssss</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -34,7 +88,8 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      title:'สวัสดี Yoonai'
+      title:'YOUNAI',
+      company:'Chysoft Co.,Ltd.'
     }
   }
 }
@@ -46,6 +101,7 @@ export default {
     $color_2:#0D5EBF;
     $color_3:#002969;
     $color_4:#373535;
+    $color_5:#99DDFF;
     *{
         font-family: 'Prompt', sans-serif;
     }
@@ -54,34 +110,32 @@ export default {
         padding:0px;
     }
     #videoPreview {
-        position: fixed;
-        right: 0;
-        bottom: 0;
-        min-width: 100%; 
-        /*min-height: 100%;*/
-    }
-    .box1{
-        height:200px;
+        position: sticky; 
+        top: 0px;
         width:100%;
-        color:#fff;
+        min-width: 100%; 
+        min-height: 100%;
+    }
+    ._get_connected{
+        background-color: $color_1;
+        color:#FFFFFF;
+    }
+    .pcick_your_price{
         background-color: $color_1;
     }
-    .box2{
-        height:200px;
-        width:100%;
-        color:#fff;
-        background-color: $color_2;
+    ._box{
+        background-color: $color_5;
     }
-    .box3{
-        height:200px;
-        width:100%;
-        color:#fff;
-        background-color: $color_3;
+    @media (min-width: 576px) {
+        
     }
-    .box4{
-        height:200px;
-        width:100%;
-        color:#fff;
-        background-color: $color_4;
+    @media (min-width: 768px) {
+        
+    }
+    @media (min-width: 992px) {
+        
+    }
+    @media (min-width: 1200px) {
+        
     }
 </style>
