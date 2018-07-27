@@ -1,90 +1,34 @@
 <template>
     <div id="app">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 p-0 m-0">
-                    <video id="videoPreview" autoplay muted loop>
-                        <source src="./assets/preview.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <h1>HOW IT WORKS</h1>
-            <div class="row">            
-                <div class="col-xs-6 col-sm-6 p-0 m-0">
-                    <div>
-                    Free Vehicle Tracking has been providing FREE vehicle tracking services worldwide for many years, and we are proud of our history in providing no-cost tracking services to those that need it. However, we feel that the time is right to expand our horizons, and we want to share this exciting news of the changes to come!
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-6 p-0 m-0">
-                    <img src="./assets/it_works.png" style="width:100%"/>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div  class='row'>
-                <div class="col-xs-6 col-sm-9 p-0 m-0">
-                    FEATURES
-                </div>
-                <div class="col-xs-6 col-sm-3 p-0 m-0">
-                    FEATURES
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid _get_connected">
-            <div class="container">
-                <h1>GET CONNECTED</h1>
-                <div  class='row'>
-                    <div class="col-xs-6 col-sm-6 p-0 m-0">
-                        <img src="./assets/need_more.png" style="width:100%"/>
-                    </div>
-                    <div class="col-xs-6 col-sm-6 p-0 m-0">
-                        <div>
-                        Free Vehicle Tracking has been providing FREE vehicle tracking services worldwide for many years, and we are proud of our history in providing no-cost tracking services to those that need it. However, we feel that the time is right to expand our horizons, and we want to share this exciting news of the changes to come!
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <h1>NEED MORE</h1>
-            <div  class='row'>
-                <div class="col-xs-6 col-sm-6 p-0 m-0">
-                    <div>
-                    Free Vehicle Tracking has been providing FREE vehicle tracking services worldwide for many years, and we are proud of our history in providing no-cost tracking services to those that need it. However, we feel that the time is right to expand our horizons, and we want to share this exciting news of the changes to come!
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-6 p-0 m-0">
-                    <img src="./assets/need_more.png" style="width:100%"/>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid pcick_your_price">
-            <div class="container">
-                <h1>PICK YOUR PRICE</h1>
-                <div class="row">
-                    <div class="col-xs-6 col-sm-3">
-                        <div class="_box">ssss</div>
-                    </div>
-                    <div class="col-xs-6 col-sm-3">
-                        <div class="_box">ssss</div>
-                    </div>
-                    <div class="col-xs-6 col-sm-3">
-                        <div class="_box">ssss</div>
-                    </div>
-                    <div class="col-xs-6 col-sm-3">
-                        <div class="_box">ssss</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <yoonai-preview></yoonai-preview>
+        <yoonai-it-work></yoonai-it-work>
+        <yoonai-features></yoonai-features>
+        <yoonai-connected></yoonai-connected>
+        <yoonai-need-more></yoonai-need-more>
+        <yoonai-pick-price></yoonai-pick-price>
+        <yoonai-footer></yoonai-footer>
     </div>
 </template>
 
 <script>
-export default {
-  name: 'app',
+    import video_preview from './components/video_preview.vue'
+    import it_work from './components/it_work.vue'
+    import features from './components/features.vue'
+    import get_connected from './components/get_connected.vue'
+    import need_more from './components/need_more.vue'
+    import pick_price from './components/pick_price.vue'
+    import Footer from './components/footer.vue'
+    export default {
+        name: 'app',
+        components:{
+            'yoonai-preview':video_preview,
+            'yoonai-it-work':it_work,
+            'yoonai-features':features,
+            'yoonai-connected':get_connected,
+            'yoonai-need-more':need_more,
+            'yoonai-pick-price':pick_price,
+            'yoonai-footer':Footer 
+        },
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
@@ -104,6 +48,8 @@ export default {
     $color_5:#99DDFF;
     *{
         font-family: 'Prompt', sans-serif;
+        font-size:16px;
+        font-weight: 300;
     }
     body{
         margin:0px;
@@ -121,10 +67,105 @@ export default {
         color:#FFFFFF;
     }
     .pcick_your_price{
-        background-color: $color_1;
+        background-color: $color_5;
     }
     ._box{
         background-color: $color_5;
+    }
+    .yoonai-logo{
+        width: 60px;
+        height: 60px;
+        background-image: url('./assets/logo.png');
+        background-size: cover;
+        background-color:#fff;
+        display: block;
+        border-radius: 30px;
+        -webkit-border-radius: 30px;
+        -moz-border-radius: 30px;
+    }
+    .yoonai-logo:after{
+        content: 'YOONAI';
+        position:absolute;
+        left:70px;
+        top:18px;
+        color:#ffffff;
+        font-size: 20px;
+        font-weight: 400;
+        letter-spacing: 3px;
+    }
+    .yoonai-icon{
+        width: 60px;
+        height: 60px;
+        background-image: url('./assets/logo.png');
+        background-size: cover;
+        background-color:$color_1;
+        display: inline-block;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+    }
+    .lang-bar-en{
+        width: 24px;
+        height: 24px;
+        background-size: cover;
+        background-color:$color_1;
+        display: block;
+        border-radius: 12px;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        position:relative;
+    }
+    .lang-bar-en:before{
+        content:'EN';
+        position:absolute;
+        top:4px;
+        left:6px;
+        color:#ffffff;
+        font-size:10px;
+    }
+    .login_signup{
+        position:absolute;
+        z-index:99;
+        top:20px;
+        right :20px;
+    }
+    .login_signup a{
+        margin:5px;
+        padding:5px;
+        color:#fff;
+    }
+    .caption{
+        letter-spacing: 3px;
+        font-weight: 300;
+        font-size:20px;
+    }
+    a.active{
+        padding:5px;
+        border-radius: 20px;
+        color:#fff;
+        background-color: $color_1;
+        padding: 10px 20px;
+    }
+    a.button {
+        border: none;
+        color: white;
+        padding: 5px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        cursor: pointer;
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+    }
+    a.button:hover {
+        background-color: $color_1;
+        color: white;
+    }
+    footer{
+        background-color: $color_4;
+        padding-top:30px;
+        color:#ffffff;
     }
     @media (min-width: 576px) {
         
