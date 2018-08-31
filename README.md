@@ -1,4 +1,4 @@
-# yoonai
+# yoonai-web
 
 > A Vue.js project
 

@@ -1,0 +1,16 @@
+@mixin txt-ext-light($size:12px){
+    font-size:$size;
+    font-weight: 200;
+}
+@mixin txt-light($size:12px){
+    font-size:$size;
+    font-weight: 300;
+}
+@mixin txt-regular($size:12px){
+    font-size:$size;
+    font-weight: 400;
+}
+@mixin txt-medium($size:12px){
+    font-size:$size;
+    font-weight: 500;
+}

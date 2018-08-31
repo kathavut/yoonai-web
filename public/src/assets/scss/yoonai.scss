@@ -1,0 +1,258 @@
+$_assets_:"./assets/";
+@import "variables";
+@import "mixins";
+*{
+    font-family: 'Prompt', sans-serif;
+    @include txt-ext-light(16px);
+}
+body{
+    margin:0px;
+    padding:0px;
+}
+//#Page-Index
+//Preview
+#yoonai-index{
+    .pPreview{
+        position: relative;
+        video{
+            width:100%;
+        }
+        .txt-preview{
+            color:#ffffff;
+            position: absolute;
+            top: 50%;
+            height: 5%;
+            width:100%;
+            text-align: center;
+            letter-spacing: 5px;
+            @include txt-ext-light(25px);
+            span{
+                @include txt-medium(25px);
+            }
+        }
+    }
+    .pItWork{ }
+    .pFeatures{
+        background: linear-gradient(to top, transparent, #ffffff),
+            linear-gradient(to bottom, transparent, #ffffff),
+            url("#{$_assets_}img/traffic.jpg");
+        background-blend-mode: screen;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        ul{
+            background-color:#ffffff;
+            margin-right: 25px;
+            opacity: 0.8;
+            filter: alpha(opacity=80);
+            max-width:300px;
+            padding:20px 10px;
+            list-style-type: none;
+        }
+        li{
+            text-align: right;
+            list-style-position: inside;
+            padding:2px;
+        }
+        li::before {
+            content: "\25AA"; color: #00B1FF;
+            display: inline-block; width: 1em;
+            margin-right:15px;
+            @include txt-ext-light(20px);
+        }
+    }
+    .pConnected{
+        background-color: map-get($_colors_, 0);
+        color:#FFFFFF;
+        .btn{
+            color:#ffffff !important;
+            border-color:#ffffff;
+        }
+        .btn:hover{
+            color:map-get($_colors_, 0) !important;
+            background-color:#ffffff !important;
+        }
+    }
+    .pNeedMore{ 
+        .btn{
+            color:map-get($_colors_, 0) !important;
+            border-color:map-get($_colors_, 0);
+        }
+        .btn:hover{
+            color:#ffffff !important;
+            background-color:map-get($_colors_, 0);
+        }
+    }
+    .pPickPrice{
+        background-color: map-get($_colors_, 0);
+        ul{
+            list-style-type: none;
+            padding:20px;
+        }
+        li{
+            padding:5px;
+            border-bottom:1px solid #fff;
+        }
+        li.title{
+            @include txt-ext-light(20px);
+            border:none;
+            text-align: center;
+        }
+        li.sub-title{
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        li.border-none{
+            border:none;
+            text-align: center;
+            width:100%;
+        }
+        .box{
+            position:relative;
+            margin:0px;
+            padding:0px;
+            img{
+                position:absolute;
+                top:0px;
+                left:-5px;
+                max-width:100px !important;
+                min-width:10px !important;
+                z-index:9999;
+            }
+            ul{
+                background-color: map-get($_colors_, 4);
+                margin:20px 10px;
+                min-width: 200px;
+            }
+        }
+        .btn{
+            color:map-get($_colors_, 0) !important;
+            border-color:map-get($_colors_, 0);
+        }
+        .btn:hover{
+            color:#ffffff !important;
+            background-color:map-get($_colors_, 0);
+        }
+    }
+}
+#yoonai-login{
+    .bg{
+        width: 100%;
+        height:100vh;
+        background-color: map-get($_colors_, 0);
+    }
+    .form-container{
+        border:1px solid #fff;
+        padding:50px 60px;
+        margin-top:20vh;
+        @include border-box-shadow();
+    }
+}
+footer{
+    background-color: map-get($_colors_, 3);
+    padding-top:30px;
+    color:#ffffff;
+    @include txt-ext-light(12px);
+    a{
+        color:#ffffff;
+        @include txt-ext-light(12px);
+    }
+    p{
+        margin-top:20px;
+        margin-bottom:20px;
+        color:#a9a9a9;
+        @include txt-ext-light(12px);
+    }
+}
+.brink.container{
+    padding-bottom:50px !important;
+}
+.img-fluid{
+    min-width: 200px;
+}
+.caption{
+    letter-spacing: 5px;
+    @include txt-light(20px);
+}
+.btn{
+    color:map-get($_colors_,5) !important;
+    @include border-radius(17px);
+    padding: 5px 20px !important;
+    letter-spacing: 2px !important;
+}
+.btn.active{
+    background-color: map-get($_colors_, 0) !important;
+}
+.btn:hover{
+    color:#ffffff !important;
+    background-color:map-get($_colors_, 0) !important;
+}
+.yoonai-logo{
+    width: 70px;
+    height: 70px;
+    background-image: url("#{$_assets_}img/logo.png");
+    background-size: cover;
+    background-color:#fff;
+    display: block;
+    @include border-radius(35px);
+    position:relative;
+}
+.yoonai-logo:after{
+    content: 'YOONAI';
+    position:absolute;
+    left:85px;
+    top:18px;
+    color:#ffffff;
+    @include txt-regular(20px);
+    letter-spacing: 3px;
+}
+.yoonai-icon{
+    width: 60px;
+    height: 60px;
+    background-image: url("#{$_assets_}img/logo.png");
+    background-size: cover;
+    background-color:map-get($_colors_, 0);
+    display: inline-block;
+    @include border-radius(10px);
+}
+.lang-bar{
+    width: 24px;
+    height: 24px;
+    background-size: cover;
+    background-color:map-get($_colors_, 0);
+    display: block;
+    @include border-radius(12px);
+    position:relative;
+    margin-bottom: 5px;
+    cursor:pointer;
+}
+.lang-bar.en:before{
+    content:'EN';
+    position:absolute;
+    top:4px;
+    left:6px;
+    color:#ffffff;
+    @include txt-ext-light(10px);
+}
+.lang-bar.th:before{
+    content:'TH';
+    position:absolute;
+    top:4px;
+    left:6px;
+    color:#ffffff;
+    @include txt-ext-light(10px);
+}
+.row.space{
+    padding-top: 50px;
+}
+@include respond-above(sm){
+    .title{
+        color:blue;
+    }
+};
+@include respond-below(sm){
+    .title{
+        color:red;
+    }
+}
