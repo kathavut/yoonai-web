@@ -6,7 +6,7 @@
     "author": "",
     "repository": {
         "type": "git",
-        "url": "git://github.com/phakinch/yoonai-web.git"
+        "url": "git://github.com/kathavut/yoonai-web.git"
     },
     "scripts": {
         "clean": "rimraf public/build/*",
