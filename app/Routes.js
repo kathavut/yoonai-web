@@ -1,7 +1,7 @@
 'use strict';
 var express = require('express');
 var Routes = express.Router();
-var DB = require('./db');
+var DB = require('./DB');
 
 Routes.route('/all').get(function (req, res, next) {
     res.send('all-yoonai');

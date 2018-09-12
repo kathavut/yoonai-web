@@ -5,9 +5,9 @@
 </template>
 
 <script>
-    import Index from './components/index.vue';
-    import Login from './components/login.vue';
-    import Signup from './components/signup.vue';
+    import Index from './components/Index.vue';
+    import Login from './components/Login.vue';
+    import Signup from './components/Signup.vue';
     
     export default {
         props:['view','_session'],

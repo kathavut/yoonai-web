@@ -187,7 +187,7 @@
     import axios from 'axios';  
     import bus from "./../bus.js";
     
-    import Footer from './footer.vue';
+    import Footer from './Footer.vue';
 
     export default {
         props:['session'],
