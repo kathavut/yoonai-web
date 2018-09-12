@@ -64,6 +64,11 @@ if (process.env.NODE_ENV === 'production') {
     module.exports.entry = {
       'bundle':'./dist/src/main.js'
     };
+	module.exports.output = {
+		path: path.resolve(__dirname, './views/build'),
+		publicPath: '/build/',
+		filename: '[name].js'
+	}
     //console.log(module);
   module.exports.devtool = '#source-map';
   // http://vue-loader.vuejs.org/en/workflow/production.html

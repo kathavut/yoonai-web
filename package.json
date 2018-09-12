@@ -7,12 +7,16 @@
     "repository": {
         "type": "git",
         "url": "git://github.com/kathavut/yoonai-web.git",
-        "branch":"master"
+        "branch": "master"
     },
-    "config":{
-        "buildPath":"./dist"
+    "config": {
+        "buildPath": "./dist"
     },
     "scripts": {
+		"pregit:commit":"git init",
+		"git:commit":"git commit -a -m --",
+		"pregit:push":"npm run git:commit",
+		"git:push":"git remote add origin npm_package_repository_url && git push -u origin npm_package_repository_branch",
         "start": "node $npm_package_config_buildPath/server.js",
         "precopy": "rm -rf $npm_package_config_buildPath && mkdir $npm_package_config_buildPath",
         "copy": "cp -r ./app $npm_package_config_buildPath && cp -r ./views $npm_package_config_buildPath && cp -r ./server.js $npm_package_config_buildPath",
