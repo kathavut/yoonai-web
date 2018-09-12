@@ -6,21 +6,25 @@
     "author": "",
     "repository": {
         "type": "git",
-        "url": "git://github.com/kathavut/yoonai-web.git"
+        "url": "git://github.com/kathavut/yoonai-web.git",
+        "branch":"master"
+    },
+    "config":{
+        "buildPath":"./dist"
     },
     "scripts": {
-        "start": "node ./dist/server.js",
-        "precopy": "rm -rf ./dist && mkdir ./dist",
-        "copy": "cp -r ./app ./dist && cp -r ./views ./dist && cp -r ./server.js ./dist",
+        "start": "node $npm_package_config_buildPath/server.js",
+        "precopy": "rm -rf $npm_package_config_buildPath && mkdir $npm_package_config_buildPath",
+        "copy": "cp -r ./app $npm_package_config_buildPath && cp -r ./views $npm_package_config_buildPath && cp -r ./server.js $npm_package_config_buildPath",
         "predevelop": "npm run copy -s",
         "develop": "cross-env webpack --progress --hide-modules",
         "preclone:github": "rm -rf github",
-        "clone:github": "git clone -b master $npm_package_repository_url github",
-        "precopy:src": "rm -rf ./dist && mkdir ./dist",
-        "copy:src": "cp -r ./github/app ./dist && cp -r ./github/views ./dist && cp -r ./github/src ./dist && cp -r ./github/*.js ./dist",
+        "clone:github": "git clone -b $npm_package_repository_branch $npm_package_repository_url github",
+        "precopy:src": "rm -rf $npm_package_config_buildPath && mkdir $npm_package_config_buildPath",
+        "copy:src": "cp -r ./github/app $npm_package_config_buildPath && cp -r ./github/views $npm_package_config_buildPath && cp -r ./github/src $npm_package_config_buildPath && cp -r ./github/*.js $npm_package_config_buildPath",
         "preproduction": "npm run clone:github && npm run copy:src",
-        "production": "cross-env NODE_ENV=production webpack --config ./dist/webpack.config.js --progress --hide-modules",
-        "postproduction": "rm -rf ./github && rm -rf ./dist/src && rm ./dist/webpack.config.js && npm prune --production"
+        "production": "cross-env NODE_ENV=production webpack --config $npm_package_config_buildPath/webpack.config.js --progress --hide-modules",
+        "postproduction": "rm -rf ./github && rm -rf $npm_package_config_buildPath/src && rm $npm_package_config_buildPath/webpack.config.js && npm prune --production"
     },
     "dependencies": {
         "axios": "^0.16.2",
