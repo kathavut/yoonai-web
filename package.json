@@ -1,0 +1,56 @@
+{
+    "name": "Yoonai-Web",
+    "version": "0.0.0",
+    "description": "Yoonai Web Application.",
+    "main": "server.js",
+    "author": "",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/kathavut/yoonai-web.git"
+    },
+    "scripts": {
+        "start": "node ./dist/server.js",
+        "precopy": "rm -rf ./dist && mkdir ./dist",
+        "copy": "cp -r ./app ./dist && cp -r ./views ./dist && cp -r ./server.js ./dist",
+        "predevelop": "npm run copy -s",
+        "develop": "cross-env webpack --progress --hide-modules",
+        "preclone:github": "rm -rf github",
+        "clone:github": "git clone -b master $npm_package_repository_url github",
+        "precopy:src": "rm -rf ./dist && mkdir ./dist",
+        "copy:src": "cp -r ./github/app ./dist && cp -r ./github/views ./dist && cp -r ./github/src ./dist && cp -r ./github/*.js ./dist",
+        "preproduction": "npm run clone:github && npm run copy:src",
+        "production": "cross-env NODE_ENV=production webpack --config ./dist/webpack.config.js --progress --hide-modules",
+        "postproduction": "rm -rf ./github && rm -rf ./dist/src && rm ./dist/webpack.config.js && npm prune --production"
+    },
+    "dependencies": {
+        "axios": "^0.16.2",
+        "body-parser": "^1.5.2",
+        "bootstrap": "^4.0.0-beta.2",
+        "compression": "^1.7.3",
+        "connect-memcached": "^1.0.0",
+        "cookie-parser": "^1.4.3",
+        "express": "~4.7.2",
+        "express-handlebars": "^3.0.0",
+        "express-session": "^1.15.6",
+        "method-override": "~2.1.2",
+        "mongoose": "~4.0.0",
+        "morgan": "^1.9.0",
+        "vue": "^2.5.11",
+        "vue-axios": "^2.0.2"
+    },
+    "devDependencies": {
+        "node-sass": "^4.9.3",
+        "babel-core": "^6.26.0",
+        "babel-loader": "^7.1.2",
+        "babel-preset-env": "^1.6.0",
+        "babel-preset-stage-3": "^6.24.1",
+        "cross-env": "^5.0.5",
+        "css-loader": "^0.28.7",
+        "sass-loader": "^7.1.0",
+        "style-loader": "^0.22.1",
+        "file-loader": "^1.1.4",
+        "vue-loader": "^13.0.5",
+        "vue-template-compiler": "^2.4.4",
+        "webpack": "^3.6.0"
+    }
+}
