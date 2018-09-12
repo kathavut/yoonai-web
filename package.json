@@ -15,7 +15,7 @@
     },
     "scripts": {
 		"pregit:commit":"git init",
-		"git:commit":"git commit -a -m $npm_package_config_commit",
+		"git:commit":"git commit -a -m 'hello'",
 		"pregit:push":"npm run git:commit",
 		"git:push":"git remote add origin npm_package_repository_url && git push -u origin npm_package_repository_branch",
         "start": "node $npm_package_config_buildPath/server.js",
